@@ -75,13 +75,8 @@ final class _ARouter {
      * Destroy arouter, it can be used only in debug mode.
      */
     static synchronized void destroy() {
-        if (debuggable()) {
-            hasInit = false;
-            LogisticsCenter.suspend();
-            logger.info(Consts.TAG, "ARouter destroy success!");
-        } else {
-            logger.error(Consts.TAG, "Destroy can be used in debug mode only!");
-        }
+        hasInit = false;
+        LogisticsCenter.suspend();
     }
 
     protected static _ARouter getInstance() {
